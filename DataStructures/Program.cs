@@ -8,6 +8,7 @@ int[] arrayGrandePraCaramba = new int[100] { 61, 15, 65, 82, 17, 1, 36, 34, 18, 
     12, 11, 74, 45, 58 };
 
 //Console.WriteLine(ArrayUtils.FindMiddleValue(array));
+//Array.IndexOf(array, 1);
 //Console.WriteLine(ArrayUtils.FindFirst(array, 1));
 //Console.WriteLine(ArrayUtils.FindLast(array, 1));
 //Console.WriteLine(ArrayUtils.Min(array));
