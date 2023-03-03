@@ -32,7 +32,7 @@ namespace DataStructures.Arrays
                 }
             }
 
-            return -1;
+            throw new Exception("Array não pode ser nulo");
         }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace DataStructures.Arrays
 
             for (int i = 0; i < array.Length; i++)
             {
-                if (array[i] <= min)
+                if (array[i] < min)
                 {
                     min = array[i];
                     indice = i;
@@ -107,7 +107,7 @@ namespace DataStructures.Arrays
 
             for (int i = 0; i < array.Length; i++)
             {
-                if (array[i] >= max)
+                if (array[i] > max)
                 {
                     max = array[i];
                     indice = i;
@@ -124,15 +124,20 @@ namespace DataStructures.Arrays
         /// <returns></returns>
         public static double Average(int[] array)
         {
-            int sum = 0;
-
-            for (int i = 0; i < array.Length; i++)
+            if (array.Length != 0)
             {
-                sum += array[i];
+                int sum = 0;
+
+                for (int i = 0; i < array.Length; i++)
+                {
+                    sum += array[i];
+                }
+
+                double avg = (double)sum / array.Length;
+                return avg;
             }
 
-            double avg = (double)sum / array.Length;
-            return avg;
+            throw new Exception("Array não pode ser nulo");
         }
 
         /// <summary>
