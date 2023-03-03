@@ -85,7 +85,7 @@ namespace DataStructures.Arrays
             int iMin = 0;
             for (int i = 0; i < array.Length; i++)
             {
-                if (array[i] <= min)
+                if (array[i] < min)
                 {
                     min = array[i];
                     iMin = i;
@@ -106,7 +106,7 @@ namespace DataStructures.Arrays
             int iMax = 0;
             for (int i = 0; i < array.Length; i++)
             {
-                if (array[i] >= max)
+                if (array[i] > max)
                 {
                     max = array[i];
                     iMax = i;
