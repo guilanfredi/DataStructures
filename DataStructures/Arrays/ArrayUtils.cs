@@ -15,7 +15,24 @@ namespace DataStructures.Arrays
         /// <returns></returns>
         public static int FindMiddleValue(int[] array)
         {
-            throw new NotImplementedException();
+            int tamanho = array.Length;
+            if (tamanho != 0)
+            {
+                int metaDinha = tamanho / 2;
+                if (tamanho % 2 != 0) //Se for impar
+                {
+                    return array[metaDinha]; 
+                }
+                else
+                {
+                    return array[metaDinha -1];
+                }
+            }
+            else
+            {
+                //throw new Exception("O vetor está vazio.");
+                return -1;
+            }
         }
 
         /// <summary>
@@ -26,7 +43,15 @@ namespace DataStructures.Arrays
         /// <returns></returns>
         public static int FindFirst(int[] array, int target)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == target) 
+                { 
+                    return i; 
+                }
+            }
+            //throw new Exception("O valor não foi encontrado no vetor");
+            return -1;
         }
 
         /// <summary>
@@ -38,7 +63,14 @@ namespace DataStructures.Arrays
         /// <exception cref="NotImplementedException"></exception>
         public static int FindLast(int[] array, int target)
         {
-            throw new NotImplementedException();
+            for (int i = array.Length -1; i >= 0; i--)
+            {
+                if (array[i] == target)
+                {
+                    return i;
+                }
+            }
+            return -1;
         }
 
         /// <summary>
@@ -49,7 +81,17 @@ namespace DataStructures.Arrays
         /// <exception cref="NotImplementedException"></exception>
         public static int Min(int[] array)
         {
-            throw new NotImplementedException();
+            int min = int.MaxValue;
+            int iMin = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] < min)
+                {
+                    min = array[i];
+                    iMin = i;
+                }
+            }
+            return iMin;
         }
 
         /// <summary>
@@ -60,7 +102,17 @@ namespace DataStructures.Arrays
         /// <exception cref="NotImplementedException"></exception>
         public static int Max(int[] array)
         {
-            throw new NotImplementedException();
+            int max = int.MinValue;
+            int iMax = 0;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] > max)
+                {
+                    max = array[i];
+                    iMax = i;
+                }
+            }
+            return iMax;
         }
 
         /// <summary>
@@ -71,7 +123,19 @@ namespace DataStructures.Arrays
         /// <exception cref="NotImplementedException"></exception>
         public static double Average(int[] array)
         {
-            throw new NotImplementedException();
+            if (array.Length > 0)
+            {
+                double total = 0;
+                for (int i = 0; i < array.Length; i++)
+                {
+                    total += array[i];
+                }
+                return (total / array.Length);
+            }
+            else 
+            {
+                throw new Exception("O vetor está vazio.");
+            }
         }
 
         /// <summary>
