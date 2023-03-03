@@ -15,7 +15,24 @@ namespace DataStructures.Arrays
         /// <returns></returns>
         public static int FindMiddleValue(int[] array)
         {
-            throw new NotImplementedException();
+            int tamanho = array.Length;
+
+            if (tamanho != 0)
+            {
+
+                int metadeDoTamanho = tamanho / 2;
+
+                if (tamanho % 2 == 0)
+                {
+                    return array[metadeDoTamanho - 1];
+                }
+                else
+                {
+                    return array[metadeDoTamanho];
+                }
+            }
+
+            throw new Exception("Array não pode ser nulo");
         }
 
         /// <summary>
@@ -26,7 +43,15 @@ namespace DataStructures.Arrays
         /// <returns></returns>
         public static int FindFirst(int[] array, int target)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] == target)
+                {
+                    return i;
+                }
+            }
+
+            return -1;
         }
 
         /// <summary>
@@ -35,10 +60,17 @@ namespace DataStructures.Arrays
         /// <param name="array"></param>
         /// <param name="target"></param>
         /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
         public static int FindLast(int[] array, int target)
         {
-            throw new NotImplementedException();
+            for (int i = array.Length - 1; i >= 0; i--)
+            {
+                if (array[i] == target)
+                {
+                    return i;
+                }
+            }
+
+            return -1;
         }
 
         /// <summary>
@@ -46,10 +78,21 @@ namespace DataStructures.Arrays
         /// </summary>
         /// <param name="array"></param>
         /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
         public static int Min(int[] array)
         {
-            throw new NotImplementedException();
+            int min = int.MaxValue;
+            int indice = -1;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] < min)
+                {
+                    min = array[i];
+                    indice = i;
+                }
+            }
+
+            return indice;
         }
 
         /// <summary>
@@ -57,10 +100,21 @@ namespace DataStructures.Arrays
         /// </summary>
         /// <param name="array"></param>
         /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
         public static int Max(int[] array)
         {
-            throw new NotImplementedException();
+            int max = int.MinValue;
+            int indice = -1;
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] > max)
+                {
+                    max = array[i];
+                    indice = i;
+                }
+            }
+
+            return indice;
         }
 
         /// <summary>
@@ -68,10 +122,22 @@ namespace DataStructures.Arrays
         /// </summary>
         /// <param name="array"></param>
         /// <returns></returns>
-        /// <exception cref="NotImplementedException"></exception>
         public static double Average(int[] array)
         {
-            throw new NotImplementedException();
+            if (array.Length != 0)
+            {
+                int sum = 0;
+
+                for (int i = 0; i < array.Length; i++)
+                {
+                    sum += array[i];
+                }
+
+                double avg = (double)sum / array.Length;
+                return avg;
+            }
+
+            throw new Exception("Array não pode ser nulo");
         }
 
         /// <summary>
